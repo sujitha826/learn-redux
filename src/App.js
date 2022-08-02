@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';           // useSelector is a hook to access redux store state and useDispatch needed to dispatch an action 
+import { increment, decrement, login } from './actions';          // imported all actions
+
+/* custom React hooks that allow your React components to interact with the Redux store.
+useSelector reads a value from the store state and subscribes to updates, 
+while useDispatch returns the store's dispatch method to let you dispatch actions.*/
 
 function App() {
+  const counter = useSelector(state => state.counter);
+  const isLogged = useSelector(state => state.isLogged);
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello Redux enabled App!!</h1>
+      <h2>Counter state - {counter}</h2>
+      <button onClick={() => dispatch(increment(5))}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+
+      <p><button onClick={() => dispatch(login())}>Log In/Log Out</button></p>
+      {isLogged ? <h2>Some valuable info for the signed in users</h2> : " "}
     </div>
   );
 }
