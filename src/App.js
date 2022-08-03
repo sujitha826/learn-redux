@@ -1,6 +1,6 @@
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';           // useSelector is a hook to access redux store state and useDispatch needed to dispatch an action 
-import { increment, decrement, login } from './actions';          // imported all actions
+import { useSelector, useDispatch } from 'react-redux';                // useSelector is a hook to access redux store state and useDispatch needed to dispatch an action 
+import { increment, decrement, add, login } from './actions';          // imported all actions
 
 /* custom React hooks that allow your React components to interact with the Redux store.
 useSelector reads a value from the store state and subscribes to updates, 
@@ -14,11 +14,14 @@ function App() {
   return (
     <div className="App">
       <h1>Hello Redux enabled App!!</h1>
-      <h2>Counter state - {counter}</h2>
-      <button onClick={() => dispatch(increment(5))}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
 
-      <p><button onClick={() => dispatch(login())}>Log In/Log Out</button></p>
+      <h2>Counter state - {counter}</h2>
+
+      <button className = "butn" onClick={() => dispatch(increment())}>Increment</button>
+      <button className = "butn" onClick={() => dispatch(decrement())}>Decrement</button>
+      <button className = "butn" onClick={() => dispatch(add(5))}>AddByNumber</button>
+
+      <button className = "butn" onClick={() => dispatch(login())}>LogIn/LogOut</button>
       {isLogged ? <h2>Some valuable info for the signed in users</h2> : " "}
     </div>
   );
