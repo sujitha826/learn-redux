@@ -17,8 +17,21 @@ export const add = (number) => {
     }
 }
 
-export const login = () => {
+export const signin = () => {
     return {
         type: "SIGN_IN"
+    }
+}
+
+export const login = (data) => {
+    return {
+        type: "LOG_IN",
+        payload: data
+    }
+}
+
+export const logout = () => {
+    return {
+        type: "LOG_OUT"
     }
 }
