@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from '../actions';
 import '../App.css';
 
@@ -14,7 +13,8 @@ export default function Profile() {
             <p>Username : {user.username} </p>
             <p>Age : {user.age}</p>
             <p>Email : {user.email}</p>
-            <button
+
+            <button className='butn'
                 onClick={() => {
                     dispatch(logout());
                 }}

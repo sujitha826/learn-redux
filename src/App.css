@@ -16,7 +16,7 @@ body {
 
 .butn {
   width: 8%;
-  height: 50px;
+  height: 30px;
   margin-top: 12px;
   background-color: cadetblue;
   border-radius: 5px;
@@ -31,11 +31,30 @@ body {
 }
 
 .login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  width: 50%;
+  width: 30%;
+  height: 50%;
   margin-top: 30px;
+  
+}
+
+.form-input input {
+  width: 250px;
+  height: 30px;
+  margin-top: 15px;
+  padding-left: 8px;
+  background-color: rgba(169, 169, 169, 0.445);
+  margin-left: 70px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-input button {
+  width: 100px;
+  height: 30px;
+  margin-top: 15px;
+  background-color: rgba(35, 107, 201, 0.445);
+  margin-left: 150px;
+  border-radius: 5px;
+  border: none;
 }

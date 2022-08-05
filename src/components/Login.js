@@ -12,12 +12,15 @@ export default function Login() {
 
     return (
         <div className="login">
-            <input type="text" placeholder='Username...' onChange={(e) => setUsername(e.target.value)} />
-            <input type="text" placeholder='Password...' />
-            <input type="number" placeholder='Age...' onChange={(e) => setAge(e.target.value)} />
-            <input type="text" placeholder='Email...' onChange={(e) => setEmail(e.target.value)} />
-            <button
-                onClick={() => dispatch(login({ username: username, age: age, email: email }))}>LOGIN</button>
+            <div className="form-input"><input type="text" placeholder='Username...' onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" placeholder='Password...' />
+                <input type="number" placeholder='Age...' onChange={(e) => setAge(e.target.value)} />
+                <input type="text" placeholder='Email...' onChange={(e) => setEmail(e.target.value)} />
+
+
+                <button
+                    onClick={() => dispatch(login({ username: username, age: age, email: email }))}>LOGIN</button>
+            </div>
         </div>
     );
 }
