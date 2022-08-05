@@ -17,12 +17,6 @@ export const add = (number) => {
     }
 }
 
-export const signin = () => {
-    return {
-        type: "SIGN_IN"
-    }
-}
-
 export const login = (data) => {
     return {
         type: "LOG_IN",

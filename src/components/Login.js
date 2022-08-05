@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../actions';
 import '../App.css';
 
 
 export default function Login() {
     const [username, setUsername] = useState("");
-    const [age, setAge] = useState();
+    const [age, setAge] = useState(0);
     const [email, setEmail] = useState("");
     const dispatch = useDispatch();
 
+    const theme = useSelector(state => state.theme);
+
     return (
-        <div className="login">
+        <div className="login" style={{ color: theme }}>
             <div className="form-input"><input type="text" placeholder='Username...' onChange={(e) => setUsername(e.target.value)} />
                 <input type="text" placeholder='Password...' />
                 <input type="number" placeholder='Age...' onChange={(e) => setAge(e.target.value)} />

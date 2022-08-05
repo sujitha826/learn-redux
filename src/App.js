@@ -11,13 +11,14 @@ while useDispatch returns the store's dispatch method to let you dispatch action
 function App() {
   const counter = useSelector(state => state.counter);
   const isLogged = useSelector(state => state.isLogged);
+  const theme = useSelector(state => state.theme);
   const dispatch = useDispatch();
 
   return (
     <div className="App">
-      <h1>Hello Redux enabled App!!</h1>
+      <h1 style={{ color: theme }}>Hello Redux enabled App!!</h1>
 
-      <h2>Counter state - {counter}</h2>
+      <h2 style={{ color: theme }} >Counter state - {counter}</h2>
       <button className="butn" onClick={() => dispatch(increment())}>Increment</button>
       <button className="butn" onClick={() => dispatch(decrement())}>Decrement</button>
       <button className="butn" onClick={() => dispatch(add(5))}>AddByFive</button>

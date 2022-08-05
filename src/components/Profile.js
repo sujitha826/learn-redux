@@ -5,14 +5,15 @@ import '../App.css';
 
 export default function Profile() {
     const user = useSelector((state) => state.user);
+    const theme = useSelector(state => state.theme)
     const dispatch = useDispatch();
 
     return (
         <>
-            <h2>User Profile</h2>
-            <p>Username : {user.username} </p>
-            <p>Age : {user.age}</p>
-            <p>Email : {user.email}</p>
+            <h2 style={{ color: theme }}>User Profile</h2>
+            <p style={{ color: theme }}>Username : {user.username} </p>
+            <p style={{ color: theme }}>Age : {user.age}</p>
+            <p style={{ color: theme }}>Email : {user.email}</p>
 
             <button className='butn'
                 onClick={() => {
