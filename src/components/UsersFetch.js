@@ -1,10 +1,9 @@
 import axios from 'axios';
 import { fetchUsersFailure, fetchUsersRequest, fetchUsersSuccess } from '../actions';
-import React, { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import { useDispatch } from 'react-redux';
 
 const fetchUsers = () => {
-    const dispatch = useDispatch();
     return function (dispatch) {
         dispatch(fetchUsersRequest);
         axios.get("https://jsonplaceholder.typicode.com/users")
@@ -18,9 +17,12 @@ const fetchUsers = () => {
     }
 }
 
-
 export default function usersFetch() {
     const dispatch = useDispatch();
-
-
+    const users = dispatch(fetchUsers);
+    return (
+        <div>
+            <h2>Users list</h2>
+        </div>
+    );
 }

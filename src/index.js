@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';            // connects the global store 
 import logger from 'redux-logger';
 import { applyMiddleware } from 'redux';
 import { ThunkMiddleware } from 'redux-thunk';
-import axios from 'axios';
+
 
 // global store of the whole app
 const myStore = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
