@@ -1,4 +1,4 @@
-let initialState = { username: "", age: 0, email: "" };
+const initialState = { username: "", age: 0, email: "" };
 const profileReducer = (state = initialState, action) => {
     console.log(action);
     switch (action.type) {
