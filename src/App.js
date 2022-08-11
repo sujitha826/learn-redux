@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';                // useSel
 import { increment, decrement, add } from './actions';                 // imported all actions
 import Login from './components/Login';
 import Profile from './components/Profile';
+import UsersFetch from './components/UsersFetch';
 
 /* custom React hooks that allow your React components to interact with the Redux store.
 useSelector reads a value from the store state and subscribes to updates, 
@@ -23,6 +24,7 @@ function App() {
       <button className="butn" onClick={() => dispatch(decrement())}>Decrement</button>
       <button className="butn" onClick={() => dispatch(add(5))}>AddByFive</button>
       {isLogged ? <Profile /> : <Login />}
+      <UsersFetch />
     </div>
   );
 }
