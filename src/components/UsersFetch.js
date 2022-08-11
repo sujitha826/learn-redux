@@ -10,7 +10,7 @@ export default function UsersFetch() {
     // console.log(users);
     return (
         <div className='users-list'>
-            <h2>Users List</h2>
+            <h3>Users List</h3>
             <ul>
                 {users.map(data => (
                     <li key={data.id}> {data.name}</li>
